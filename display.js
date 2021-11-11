@@ -1,4 +1,4 @@
-
+//start fetch-request
 fetch("https://beer-live.p.rapidapi.com/top10beers", {
 	"method": "GET",
 	"headers": {
@@ -16,8 +16,8 @@ fetch("https://beer-live.p.rapidapi.com/top10beers", {
             .catch(function (err) {
                 console.log('error: ' + err);
             });
-
-
+//end fetch-request
+//Aufruf der Funktion appendData
 function appendData(data) {
 //loading-div wird zugewiesen
 var loading = document.getElementById("loading")
