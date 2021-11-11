@@ -1,3 +1,4 @@
+
 fetch("https://beer-live.p.rapidapi.com/top10beers", {
 	"method": "GET",
 	"headers": {
@@ -18,10 +19,14 @@ fetch("https://beer-live.p.rapidapi.com/top10beers", {
 
 
 function appendData(data) {
+//loading-div wird zugewiesen
+var loading = document.getElementById("loading")
 var mainContainer = document.getElementById("topbeer");
 for (var i = 0; i < data.length; i++) {
     var div = document.createElement("div");
      div.innerHTML = 'Top-Bier: ' + data[i].bier + ' ' + 'aus ' + data[i].herkunft;
     mainContainer.appendChild(div);
+    //wenn die Daten gefetched wurden, wird das loading-div ausgeblendet 
+    loading.style.display = "none"
   }
 }
