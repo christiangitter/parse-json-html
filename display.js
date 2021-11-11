@@ -21,7 +21,7 @@ function appendData(data) {
 var mainContainer = document.getElementById("topbeer");
 for (var i = 0; i < data.length; i++) {
     var div = document.createElement("div");
-     div.innerHTML = 'Top-Bier: ' + data[i].bier + ' ' + 'aus' + data[i].herkunft;
+     div.innerHTML = 'Top-Bier: ' + data[i].bier + ' ' + 'aus ' + data[i].herkunft;
     mainContainer.appendChild(div);
   }
 }
