@@ -56,5 +56,22 @@
     100% { transform: rotate(360deg); }
   }
 
+  .fas {
+      color: gold;
+  }
+
+  .far {
+    color: gold;
+}
+
+.fa-trophy {
+    font-size: x-large;
+    color: white;
+    border: 2px solid orange;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: orange;
+}
+
 
 

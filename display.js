@@ -29,8 +29,13 @@ for (var i = 0; i < data.length; i++) {
      var herkunft = document.createElement("div");
      var stars = document.createElement("div");
      //fill the vars with content from the JSON
-     platzdiv.innerHTML =  `Platz ${platz}: ` + '<br>';
-     div.innerHTML = data[i].bier + '<br>';
+     if (platz === 1) {
+        platzdiv.innerHTML =  '<i class="fas fa-trophy"></i>'+ '<br>';
+     }
+     else {
+        platzdiv.innerHTML =  `Platz ${platz}: ` + '<br>';
+     }
+     div.innerHTML = data[i].bier;
      if (data[i].bewertungInt <= 20) {
          stars.innerHTML = '<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>'
      }
