@@ -27,9 +27,30 @@ for (var i = 0; i < data.length; i++) {
      var platzdiv = document.createElement("div");
      var div = document.createElement("div");
      var herkunft = document.createElement("div");
-     //fill the vars with content
+     var stars = document.createElement("div");
+     //fill the vars with content from the JSON
      platzdiv.innerHTML =  `Platz ${platz}: ` + '<br>';
      div.innerHTML = data[i].bier + '<br>';
+     if (data[i].bewertungInt <= 20) {
+         stars.innerHTML = '<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>'
+     }
+     else  if (data[i].bewertungInt  > 20 && data[i].bewertungInt  < 41) {
+        stars.innerHTML = '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>'
+    }
+    else  if (data[i].bewertungInt  > 41 && data[i].bewertungInt  < 61) {
+        stars.innerHTML = '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>'
+    }
+    else  if (data[i].bewertungInt  > 61 && data[i].bewertungInt  < 81) {
+        stars.innerHTML = '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>'
+    }
+    else  if (data[i].bewertungInt  > 81 && data[i].bewertungInt  < 98) {
+        stars.innerHTML = '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"><i class="fas fa-star-half-alt"></i>'
+    }
+    else {
+        stars.innerHTML = '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'
+    }
+
+     //stars.innerHTML = data[i].bewertungInt+ '<br>';
      herkunft.innerHTML = data[i].herkunft + '<br>' + '<br>';
      //style the divs
      div.style.fontSize = "large"
@@ -40,6 +61,7 @@ for (var i = 0; i < data.length; i++) {
      //add the divs to the mainContainer
     mainContainer.appendChild(platzdiv); 
     mainContainer.appendChild(div);
+    mainContainer.appendChild(stars);
     mainContainer.appendChild(herkunft);
     //wenn die Daten gefetched wurden, wird das loading-div ausgeblendet 
     loading.style.display = "none"
