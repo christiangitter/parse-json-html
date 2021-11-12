@@ -6,7 +6,6 @@ fetch("https://beer-live.p.rapidapi.com/top10beers", {
 		"x-rapidapi-key": "6b5438322bmsh499cfcde3ebbe7fp11fabfjsn0a23997d94f6"
 	}
 })
-    
             .then(function (response) {
                 return response.json();
             })
@@ -23,10 +22,25 @@ function appendData(data) {
 var loading = document.getElementById("loading")
 var mainContainer = document.getElementById("topbeer");
 for (var i = 0; i < data.length; i++) {
-    var platz = i+1;
+    //name the variables
+     var platz = i+1;
+     var platzdiv = document.createElement("div");
      var div = document.createElement("div");
-     div.innerHTML = `Platz ${platz}: ` + data[i].bier + ' ' + 'aus ' + data[i].herkunft;
+     var herkunft = document.createElement("div");
+     //fill the vars with content
+     platzdiv.innerHTML =  `Platz ${platz}: ` + '<br>';
+     div.innerHTML = data[i].bier + '<br>';
+     herkunft.innerHTML = data[i].herkunft + '<br>' + '<br>';
+     //style the divs
+     div.style.fontSize = "large"
+     platzdiv.style.fontSize= "small";
+     platzdiv.style.fontSize = 200;
+     herkunft.style.fontWeight = 200;
+     herkunft.style.fontSize = "medium";
+     //add the divs to the mainContainer
+    mainContainer.appendChild(platzdiv); 
     mainContainer.appendChild(div);
+    mainContainer.appendChild(herkunft);
     //wenn die Daten gefetched wurden, wird das loading-div ausgeblendet 
     loading.style.display = "none"
   }

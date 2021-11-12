@@ -17,6 +17,11 @@
    flex-direction: column;
    position: absolute;
    z-index: 1;
+
+}
+
+.headline {
+    margin-bottom: 20px;
 }
 
 #loading {
@@ -28,6 +33,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: white;
 }
 
 #loading p{
